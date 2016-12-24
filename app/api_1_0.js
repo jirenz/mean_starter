@@ -1,5 +1,5 @@
 var express = require('express')
-var course = require('./controllers/course')
+var course = require('./courses/course.controller.js')
 router = express.Router()
 
 router.use('/courses', course)
