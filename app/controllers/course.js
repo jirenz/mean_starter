@@ -3,9 +3,20 @@ var Course = require('../models/course');
 
 router = express.Router();
 
-router.get('/:course_id', function(req, res) {
+router.get('/', function(req, res) {
 	console.log('get')
+	Course.find({}, function(err, courses) {
+		if (err) {
+			console.log(err);
+			res.sendStatus(404);
+		} else {
+			res.status(200).json(courses);
+		}
+	});
+});
+router.get('/:course_id', function(req, res) {
 	course_id = req.params.course_id
+	console.log('get' + course_id)
 	Course.findById(course_id, function(err, course) {
 		if (err) {
 			console.log(err);

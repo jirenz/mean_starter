@@ -16,5 +16,6 @@ module.exports = mongoose.model('Course', {
 	},
 	enrolled: {
 		type: Number
+		default: 0
 	}
 })
