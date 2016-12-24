@@ -1,0 +1,21 @@
+{
+  "name": "starter",
+  "description": "A project for testing with mean stack",
+  "main": "app.js",
+  "authors": [
+    "jirenz <zhujiren1155@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}
