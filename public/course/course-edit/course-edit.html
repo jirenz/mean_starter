@@ -1,0 +1,25 @@
+<div>
+	Id: <input type="text" ng-model="$ctrl.courseId" /><br />
+	<input type="submit" ng-click="$ctrl.search()" value="Search" />
+</div>
+<div ng-if="$ctrl.course">
+	<label>Name: <input type="text" ng-model="$ctrl.course.name" /></label><br />
+    <label>Label: <input type="text" ng-model="$ctrl.course.label" /></label><br />
+    <label>Description: <input type="text" ng-model="$ctrl.course.description" /></label><br />
+    <label>Capacity: <input type="text" ng-model="$ctrl.course.capacity" /></label><br />
+    <input type="submit" ng-click="$ctrl.update()" value="Update" />
+</div>
+<!-- 
+<div ng-controller="courseEdit">
+  <form novalidate class="simple-form" name="courseRetrieve">
+    <label>Id: <input type="text" ng-model="course_id" /></label><br />
+    <input type="submit" ng-click="$ctrl.retrieve(course_id)" value="Retrieve" />
+  </form>
+  <form novalidate class="simple-form" name="courseEdit">
+    <label>Name: <input type="text" ng-model="course.name" /></label><br />
+    <label>Label: <input type="text" ng-model="course.label" /></label><br />
+    <label>Description: <input type="text" ng-model="course.description" /></label><br />
+    <label>Capacity: <input type="text" ng-model="course.capacity" /></label><br />
+    <input type="submit" ng-click="$ctrl.update(course)" value="Update" />
+  </form>
+</div> -->
