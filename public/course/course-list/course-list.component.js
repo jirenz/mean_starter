@@ -3,6 +3,10 @@ angular.module('course').component('courseList', {
 	controller: ['Course', function CourseListController(Course) {
 		var self = this;
 		self.courses = Course.query()
+		self.save = function (course) {
+			delete course.edit
+			course.$save()
+		}
 		/*$http.get('api/1.0/courses/').then( function(response)
 		{
 			self.courses = response.data

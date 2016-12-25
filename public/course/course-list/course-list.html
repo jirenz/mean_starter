@@ -1,8 +1,18 @@
 <ul>
 	<li ng-repeat="course in $ctrl.courses">
-		<span><b>{{course.name}}</b></span>
-		<p>description: {{course._id}}</p> 
-		<p>description: {{course.description}}</p> 
-		<p>enrollment status: {{course.enrolled}}/{{course.capacity}}</p>
+		<div ng-if="!course.edit">
+			<b>{{course.name}}</b>
+			<p>label: {{course.label}}</p>
+			<p>description: {{course.description}}</p> 
+			<p>enrollment status: {{course.enrolled}}/{{course.capacity}}</p>
+			<input type="submit" ng-click="course.edit=true" value="Edit" />
+		</div>
+		<div ng-if="course.edit">
+			<label>Name: <input type="text" ng-model="course.name" /></label><br />
+			<label>Label: <input type="text" ng-model="course.label" /></label><br />
+			<label>Description: <input type="text" ng-model="course.description" /></label><br />
+			<label>Capacity: <input type="text" ng-model="course.capacity" /></label><br />
+			<input type="submit" ng-click="$ctrl.save(course)" value="Save" />
+		</div>
 	</li>
 </ul>

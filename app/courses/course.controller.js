@@ -33,7 +33,7 @@ router.post('/:course_id', function(req,res) {
 	var attributes = req.body;
 	//console.log(req.body)
 	//delete attributes._id
-	Course.findByIdAndUpdate(course_id, attributes, function(err, course) {
+	Course.findByIdAndUpdate(course_id, attributes, {new: true}, function(err, course) {
 		if (err) {
 			console.log(err);
 			res.sendStatus(404);
